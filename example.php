@@ -2,7 +2,6 @@
 require_once("connection.php");
 
 $conn = new dbConnect();
-
 $conn->connect();
 
 /******************************/
@@ -17,6 +16,8 @@ while($row = mysql_fetch_assoc($res)){
 	
 }// end while 
 
+
+
 /******************************/
 #Insert data from database.`example`
 /******************************/
@@ -24,6 +25,28 @@ $age = "12";
 $fields = array("name","age");
 $values = array("syed Ali",$age);
 $conn->insertData(_TBLNAME,$fields,$values); // return _TRUE for successful insertions
+
+
+
+
+/******************************/
+#Delete data from database.`example`
+/******************************/
+$id = 1; // OR $_REQUEST['id'];
+$where = "id = '".$id."'";
+$conn->deleteData(_TBLNAME,$where);
+
+
+
+/******************************/
+#Update data from database.`example`
+/******************************/
+$id = 1; // OR $_REQUEST['id'];
+$where = "id = '".$id."'";
+$fields = array("name","age");
+$values = array("syed Ali",$age);
+
+$conn->updateData(_TBLNAME,$fields,$values, $where);
 
 
 
