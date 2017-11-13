@@ -11,6 +11,6 @@ define("_FALSE", "0");
 define("_TRUE", "1");
 
 define("_WEBADDR","http://localhost/");
-
+/**************CONNECTION****************/
 
 ?>
